@@ -27,7 +27,11 @@
             <td class="">@vol.AeroportArrivee.libelle - @vol.Aeroport.code</td>
             <td class="">@vol.calculerDistance() Km</td>
 
-            <td class=""><a asp-action="Details" asp-controller="Vol" asp-route-id="@vol.Id">View more</a></td>
+            <td class="">
+                <a class="text-primary" asp-action="Details" asp-controller="Vol" asp-route-id="@vol.Id">View more</a> -
+                <a class="text-danger" asp-action="Cancel" asp-controller="Vol" asp-route-id="@vol.Id">Cancel</a>
+            </td>
+
         </tr>
             }
         </table>

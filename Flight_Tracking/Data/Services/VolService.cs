@@ -27,10 +27,17 @@ namespace Flight_Tracking.Data.Services
             return volDetails;
         }
 
-        public async Task AddNewMovieAsync(Vol data)
+
+
+        public async Task AddNewVolAsync(Vol data)
         {
             await _context.Vols.AddAsync(data);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task CancelVolByIdAsync(int id)
+        {
+            await DeleteAsync(id);
         }
     }
 }

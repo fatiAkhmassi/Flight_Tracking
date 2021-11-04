@@ -28,6 +28,12 @@ namespace Flight_Tracking.Controllers
             var volDetail = await VolService.GetVolByIdAsync(id);
             return View(volDetail);
         }
+        public async Task<IActionResult> Cancel(int id)
+        {
+            await VolService.CancelVolByIdAsync(id);
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -40,7 +46,7 @@ namespace Flight_Tracking.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Vol vol)
         {
-            await VolService.AddNewMovieAsync(vol);
+            await VolService.AddNewVolAsync(vol);
             return RedirectToAction("Index","Home");
         }
     }

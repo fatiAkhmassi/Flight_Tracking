@@ -10,7 +10,9 @@ namespace Flight_Tracking.Data.Services
     public interface IVolService:IEntityBaseRepository<Vol>
     {
         Task<Vol> GetVolByIdAsync(int id);
-        
-        Task AddNewMovieAsync(Vol data);
+
+        Task CancelVolByIdAsync(int id);
+
+        Task AddNewVolAsync(Vol data);
     }
 }
